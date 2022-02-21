@@ -29,25 +29,23 @@ const analytics = getAnalytics(app);
 const auth = getAuth(app);
 
 document.getElementById("signup").addEventListener("click", function () {
-  // const email = document.getElementById("email").value;
-  // const password = document.getElementById("pass").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("pass").value;
 
-  // createUserWithEmailAndPassword(auth, email, password)
-  //   .then((userCredential) => {
-  //     // Signed in
-  //     const user = userCredential.user;
-  //     // ...
-  //     alert("created");
-  //   })
-  //   .catch((error) => {
-  //     const errorCode = error.code;
-  //     const errorMessage = error.message;
-  //     // ..
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      // ...
+      alert("created");
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // ..
 
-  //     alert(errorCode + errorMessage);
-  //   });
-    
-  alert("redirecting")
+      alert(errorCode + errorMessage);
+    });
 });
 
 document.getElementById("signin").addEventListener("click", function () {
